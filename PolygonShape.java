@@ -6,7 +6,7 @@
 import java.awt.*;
 import java.util.Arrays;
 //Complete the PolygonShape class
-public class PolygonShape extends Shape{
+public class PolygonShape extends RectangleShape{
     private int radius;
     private int numberOfSides;
     private Point centre;
@@ -18,7 +18,7 @@ public class PolygonShape extends Shape{
     }
 
     public PolygonShape(int x, int y, int s, int pw, int ph, Color c, Color bc, PathType pt, ShapeType st) {
-        super(x, y, s, s, pw, ph, c, bc, pt);
+        super(x, y, s, pw, ph, c, bc, pt);
         ShapeType polygon = ShapeType.valueOf(numberOfSides);
     }
 }
