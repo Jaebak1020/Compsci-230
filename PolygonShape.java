@@ -6,7 +6,7 @@
 import java.awt.*;
 import java.util.Arrays;
 //Complete the PolygonShape class
-public class PolygonShape extends RectangleShape{
+public class PolygonShape extends SquareShape{
     private int radius;
     private int numberOfSides;
     private Point centre;
@@ -19,6 +19,20 @@ public class PolygonShape extends RectangleShape{
 
     public PolygonShape(int x, int y, int s, int pw, int ph, Color c, Color bc, PathType pt, ShapeType st) {
         super(x, y, s, pw, ph, c, bc, pt);
-        ShapeType polygon = ShapeType.valueOf(numberOfSides);
+        radius = st.ordinal() / 2;
+        numberOfSides = st.ordinal();
+        centre = new Point(st.ordinal()/2, st.ordinal()/2);
+    }
+
+    @Override
+    public void draw(Graphics g) {
+        super.draw(g);
+
+        int[] xCoordinates = new int[numberOfSides];
+        int[] yCoordinates = new int[numberOfSides];
+
+        for(int i = 0; i < numberOfSides; i++) {
+
+        }
     }
 }
